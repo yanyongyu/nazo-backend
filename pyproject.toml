@@ -19,6 +19,11 @@ alembic = "^1.4.2"
 [tool.poetry.dev-dependencies]
 yapf = "^0.30.0"
 
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"

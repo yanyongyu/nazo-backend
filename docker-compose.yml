@@ -1,0 +1,6 @@
+version: "2"
+services:
+    nazo-backend:
+        build: .
+        ports:
+            - "2333:80"
