@@ -5,4 +5,4 @@ services:
         ports:
             - "2333:80"
         environment:
-            - MODULE_NAME=nazo_backend.main
+            MODULE_NAME: "nazo_backend.main"
