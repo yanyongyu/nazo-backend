@@ -2,7 +2,10 @@ version: "2"
 services:
     nazo-backend:
         build: .
+        volumes:
+            - "/etc/localtime:/etc/localtime"
         ports:
             - "2333:80"
         environment:
             MODULE_NAME: "nazo_backend.main"
+        network_mode: bridge

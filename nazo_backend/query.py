@@ -3,8 +3,8 @@
 """
 @Author         : yanyongyu
 @Date           : 2020-04-28 14:38:30
-@LastEditors: yanyongyu
-@LastEditTime: 2020-05-06 11:40:56
+@LastEditors    : yanyongyu
+@LastEditTime   : 2020-05-08 13:47:19
 @Description    : None
 @GitHub         : https://github.com/yanyongyu
 """
@@ -22,7 +22,7 @@ def _tuple2user(user: tuple) -> UserForm:
 
 async def get_simple_rank() -> RankSimpleForm:
     query = User.select().where(User.c.current > 0).order_by(
-        User.c.current, User.c.current_date).limit(3)
+        User.c.current.dec(), User.c.current_date).limit(3)
     rank = await database.fetch_all(query)
     return RankSimpleForm(**dict(
         zip(RankSimpleForm.__fields__.keys(), map(lambda x: x[1], rank))))
